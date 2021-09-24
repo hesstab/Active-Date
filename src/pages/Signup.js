@@ -7,6 +7,7 @@ import { getCurrentUser } from '../helpers/auth';
 import { Input, Typography, Button } from 'antd';
 
 const { Text } = Typography;
+
 class Signup extends React.Component {
   constructor(props) {
     super(props);

@@ -19,7 +19,7 @@ import PrivateRoute from './PrivateRoute';
 import NavBar from './NavBar';
 import { Layout } from 'antd';
 
-const { Content, Header } = Layout;
+const { Content } = Layout;
 
 
 class App extends Component {
