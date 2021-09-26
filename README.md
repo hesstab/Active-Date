@@ -50,7 +50,7 @@ cd project-name
 firebase init
 
     . Confirm YES.
-    . Create a new Firebase project, e.g.               "xyz-firebase-react"
+    . Create a new Firebase project, e.g. "xyz-firebase-react"
     . Input a project ID, e.g. "xyz-firebase-react"
     . Choose a directory where the contents will be deployed to Firebase, type "build"
     . Confirm "YES". This is important since we are not deploying the static html!
