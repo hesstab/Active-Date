@@ -34,7 +34,39 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ## Deployment
 
-TBC
+1. Install Firebase tools CLI
+```
+npm install -g firebase-tools
+```
+
+2. Login Firebase using CLI
+```
+firebase login
+```
+
+3. Setup Firebase project from CLI
+```
+cd project-name
+firebase init
+
+    . Confirm YES.
+    . Create a new Firebase project, e.g.               "xyz-firebase-react"
+    . Input a project ID, e.g. "xyz-firebase-react"
+    . Choose a directory where the contents will be deployed to Firebase, type "build"
+    . Confirm "YES". This is important since we are not deploying the static html!
+    . Confirm NO.
+    . Confirm NO.
+```
+
+4. Build react app locally
+```
+cd project-name
+yarn build
+```
+5. Deploy react app to Firebase
+```
+firebase deploy
+```
 
 ## Contributors
 
