@@ -3,10 +3,10 @@ import { UploadOutlined } from '@ant-design/icons';
 import './EditProfile.css';
 import { Link } from "react-router-dom";
 import React, {Component} from 'react';
-import { fsDb, storage} from "../services/firebase"
-import { getCurrentUser } from '../helpers/auth';
+import { fsDb, storage} from "../../services/firebase"
+import { getCurrentUser } from '../../helpers/auth';
 import moment from 'moment';
-import { Card, Avatar, Input  } from 'antd';
+import { Card, Input  } from 'antd';
 const { Meta } = Card;
 
 /////////////////////////// Ant Design//////////  file upload /////////////////
