@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 import Home from '../pages/Home';
 import Chat from '../pages/Chat';
-import Profile from '../pages/Profile';
+import Profile from '../pages/Profile/Profile';
 import PublicProfile from '../pages/PublicProfile';
 import PostActivity from '../pages/PostActivity';
 import PrivateChat from '../pages/PrivateChat';

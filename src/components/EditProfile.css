@@ -1,0 +1,11 @@
+.userProfile-pic {
+  max-width: 80%;
+  max-height: 80%;
+  margin: 0 auto;
+}
+
+.userProfile-info h1 {
+  font-weight: 700;
+  font-size: 2rem;
+}
+

@@ -1,5 +1,6 @@
 import { Upload, message, Button } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
+import './EditProfile.css';
 import { Link } from "react-router-dom";
 import React, {Component} from 'react';
 import { fsDb, storage} from "../services/firebase"
@@ -166,13 +167,21 @@ class UserInfo extends Component {
   render(){
     const info = this.props.info;
     return(
-      <div>
-        <Card
-          cover={<img alt="userpic" src={this.props.imgURL || "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"} />}
+      <div className="userProfile">
+        <Card 
+          cover={<img className="userProfile-pic" alt="userpic" src={this.props.imgURL || "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"} />}
         >
           <Meta
-            title= { (<div> <h1> <strong> {info.name} </strong> </h1>
-            <h4> {info.DOB ? moment(info.DOB.toDate()).format('MMMM Do YYYY'): null} </h4> </div>)}
+            title= { 
+              (<div className="userProfile-info">
+                <h1> 
+                  {info.name}
+                </h1>
+                <h4> 
+                  {info.DOB ? moment(info.DOB.toDate()).format('MMMM Do YYYY'): null} 
+                </h4> 
+              </div>)
+            }
             description={info.aboutme}
           />
         </Card>
