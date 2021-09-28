@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import './ActivityCard.css';
-import { fsDb } from "../services/firebase"
+import { fsDb } from "../../services/firebase"
 import moment from 'moment';
-import { getCurrentUser } from '../helpers/auth';
+import { getCurrentUser } from '../../helpers/auth';
 import { Card} from 'antd';
-import EditActivity from './EditActivity';
-import DeleteActivity from './DeleteActivity';
+import EditActivity from '../EditActivity';
+import DeleteActivity from '../DeleteActivity';
 
 
 class ActivityCard extends Component {

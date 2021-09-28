@@ -1,6 +1,6 @@
 import './Profile.css';
 import React, { Component } from 'react';
-import ActivityCard from '../../components/ActivityCard';
+import ActivityCard from '../../components/ActivityCard/ActivityCard';
 import EditProfile from '../../components/EditProfile/EditProfile';
 import { getCurrentUser } from '../../helpers/auth';
 

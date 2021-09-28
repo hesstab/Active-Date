@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {Link} from "react-router-dom";
 import { fsDb } from "../services/firebase";
 import { getCurrentUser } from '../helpers/auth';
-import ActivityCard from '../components/ActivityCard';
+import ActivityCard from '../components/ActivityCard/ActivityCard';
 
 import { Button } from 'antd';
 import moment from 'moment';
