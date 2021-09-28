@@ -2,3 +2,28 @@
   padding: 30px;
   background: #ececec;
 }
+
+.activity-edit-delete {
+  margin-top: 10px;
+}
+
+@media (max-width: 640px) {
+  .site-card-border-less-wrapper {
+    padding: 20px;
+  }
+
+  .activity-edit-delete {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .activity-edit {
+    margin-right: 10px;
+  }
+
+}
+
+
+
+
+
