@@ -3,6 +3,7 @@ import { fsDb } from "../services/firebase"
 import { Button } from 'antd';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
+import './SearchBar.css';
 
 const activityTypes = [
   { type: 'Running' },
@@ -43,8 +44,8 @@ class SearchBar extends Component {
 
   render() {
     return(
-      <div>
-        <form style={{ display: 'flex', marginBottom: '20px' }}>
+      <div className='searchBar-form-div'>
+        <form className='searchBar-form'>
 
           <Autocomplete
             onChange={ this.handleChange }

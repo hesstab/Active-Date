@@ -27,7 +27,7 @@ class PublicProfile extends Component {
         let chats = [];
         snapshots.forEach((snap) => {
           chats.push(snap.data());
-          console.log(">>>>>>", chats);
+          // console.log(">>>>>>", chats);
         })
 
         const publicUserChat = chats.filter((chat) => {

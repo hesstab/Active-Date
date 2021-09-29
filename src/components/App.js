@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {
-  Route,
   BrowserRouter as Router,
   Switch,
 } from "react-router-dom";
@@ -52,7 +51,7 @@ class App extends Component {
       <Layout>
         <Router>
           <NavBar isLoggedIn={this.state.authenticated} />
-          <Content style={{ padding: '0 50px' }}>
+          <Content>
             <div className="site-layout-content">
               <Switch>
                 <PrivateRoute exact path="/" component={Home} authenticated={this.state.authenticated} ></PrivateRoute>

@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import { Link } from "react-router-dom";
 import { fsDb } from "../services/firebase"
 import moment from 'moment';
 import { getCurrentUser } from '../helpers/auth';
 
-import { Card, Divider } from 'antd';
+import { Card } from 'antd';
 import './ActivityCard.css';
 import EditActivity from './EditActivity';
 import DeleteActivity from './DeleteActivity';

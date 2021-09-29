@@ -27,25 +27,25 @@ class PrivateChat extends Component {
   }
 
 
-handleChange = (event) => {
-  this.setState({ content: event.target.value });
-}
-
-
-handleSubmit = async() => {
-  const chats = fsDb.collection("chats").doc(this.props.location.state.chatId);
-  const newMessage = { 
-    message: this.state.content,
-    timestamp: new Date(),
-    uid: getCurrentUser().uid,
+  handleChange = (event) => {
+    this.setState({ content: event.target.value });
   }
 
-  await chats.update({
-    messages: firebase.firestore.FieldValue.arrayUnion(newMessage)
-  });
-    
-  this.setState({ content: '' });
-}
+
+  handleSubmit = async() => {
+    const chats = fsDb.collection("chats").doc(this.props.location.state.chatId);
+    const newMessage = { 
+      message: this.state.content,
+      timestamp: new Date(),
+      uid: getCurrentUser().uid,
+    }
+
+    await chats.update({
+      messages: firebase.firestore.FieldValue.arrayUnion(newMessage)
+    });
+      
+    this.setState({ content: '' });
+  }
 
   render () {
     return (
@@ -65,4 +65,5 @@ handleSubmit = async() => {
     );
   }
 }
+
 export default PrivateChat;

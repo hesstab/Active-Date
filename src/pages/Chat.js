@@ -74,8 +74,14 @@ class Chat extends Component {
     const userProfile = findWhere(this.state.userProfiles, {user_id: userId});
     console.log('userId',userId,userProfile );
 
-    return userProfile?.userImage ? <img alt="userpic" src={userProfile.userImage}
-      width="100" style={{borderRadius: "50%"}} /> : 'no image :(';
+    return userProfile?.userImage ? (
+    <img 
+    alt="userpic" 
+    src={userProfile.userImage}
+    width="100" 
+    style={{borderRadius: "50%"}} />
+    ) : 
+    'no image :(';
   }
 
   ///////////////////////////////// render all chats /////////////////////////////////

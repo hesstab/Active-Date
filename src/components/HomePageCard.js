@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { fsDb } from "../services/firebase"
 import { Card } from 'antd';
 import moment from 'moment';
+import './HomePageCard.css';
+
 const { Meta } = Card;
 
 class HomePageCard extends React.Component {
@@ -29,6 +31,7 @@ class HomePageCard extends React.Component {
     const activity = this.props.activity;
     if(!this.state.user?.user_id) return null;
     const dob = this.state?.user?.DOB;
+
     return(
       <Link
         to={{
@@ -42,13 +45,14 @@ class HomePageCard extends React.Component {
           }
         }}
       >
-        <Card hoverable style={{ width: 400 }}
+        <Card 
+          hoverable
           title= {
             this.state.user.name +
             ' | ' +
             moment(this.state.user?.DOB?.toDate()).toNow('Y')
           }
-          cover={<img alt="example" src={this.state.user?.userImage || "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"}/>} >
+          cover={<img className='card-image' alt="example" src={this.state.user?.userImage || "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"}/>} >
           <Meta title={activity.title} description="" /> <br/>
             <h5>
               {
@@ -56,8 +60,11 @@ class HomePageCard extends React.Component {
                 ', ' +
                 activity.location.street +
                 ', ' +
-                activity.location.suburb +
-                ' | '+
+                activity.location.suburb
+              }
+            </h5>
+            <h5>
+              {
                 moment(activity.time?.toDate()).format('MMMM Do YYYY')
               }
             </h5>
@@ -66,13 +73,13 @@ class HomePageCard extends React.Component {
     )
   }
 
-
   render() {
-    return(
-      <div style={{ marginBottom: '20px' }}>
-        {this.renderCard()}
-      </div>
-    )
+    if (!this.state.user?.user_id) return null;
+      return(
+        <div className='card-container-div'>
+          {this.renderCard()}
+        </div>
+      )
   }
 }
 export default HomePageCard;

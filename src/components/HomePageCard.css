@@ -1,0 +1,36 @@
+.ant-card-cover {
+    width: 500px;
+    height: 300px;
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-container-div {
+    margin-bottom: 50px;
+    min-width: 500px;
+}
+
+.ant-card-hoverable {
+    max-width: 500px;
+}
+
+@media only screen and (max-width: 640px) {
+    .ant-card-cover {
+        max-width: 320px;
+        max-height: 250px;
+    }
+
+    .card-container-div {
+        margin-bottom: 20px;
+        max-width: 320px;
+        min-width: 0;
+    }
+
+    .ant-card-hoverable {
+        max-width: 320px;
+    }  
+}

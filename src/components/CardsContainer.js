@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import HomePageCard from './HomePageCard';
+import './CardsContainer.css';
 
 class CardsContainer extends Component {
 
@@ -11,7 +12,7 @@ renderActivities =  () => {
 
   render() {
     return(
-      <div className="thumbnail" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      <div className="thumbnail">
         {this.renderActivities()}
       </div>
     )
