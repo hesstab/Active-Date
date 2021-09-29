@@ -1,11 +1,12 @@
 import { Upload, message, Button } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
+import './EditProfile.css';
 import { Link } from "react-router-dom";
 import React, {Component} from 'react';
-import { fsDb, storage} from "../services/firebase"
-import { getCurrentUser } from '../helpers/auth';
+import { fsDb, storage} from "../../services/firebase"
+import { getCurrentUser } from '../../helpers/auth';
 import moment from 'moment';
-import { Card, Avatar, Input  } from 'antd';
+import { Card, Input  } from 'antd';
 const { Meta } = Card;
 
 /////////////////////////// Ant Design//////////  file upload /////////////////
@@ -124,7 +125,7 @@ class EditProfile extends Component {
   showForm(){
     return(
       <div>
-        <form style={{ maxWidth: '800px' }}>
+        <form style={{ maxWidth: '900px' }}>
           <label style={{ marginTop: '20px', display: 'block' }}>Name</label> <Input type="text" onChange={this._renderName} value = {this.state.name} required/>
           <label style={{ marginTop: '20px', display: 'block' }}>DOB</label> <Input type="date" onChange={this._renderDOB} />
           <label style={{ marginTop: '20px', display: 'block' }}>Aboutme</label> <TextArea style={{ marginBottom: '20px' }} type="text" onChange={this._renderAboutMe} value={this.state.aboutme} required/>
@@ -166,15 +167,25 @@ class UserInfo extends Component {
   render(){
     const info = this.props.info;
     return(
-      <div>
-        <Card
-          cover={<img alt="userpic" src={this.props.imgURL || "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"} />}
+      <div className="userProfile">
+        <Card 
+          cover={<img className="userProfile-img" alt="userpic" src={this.props.imgURL || "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"} />}
         >
-          <Meta
-            title= { (<div> <h1> <strong> {info.name} </strong> </h1>
-            <h4> {info.DOB ? moment(info.DOB.toDate()).format('MMMM Do YYYY'): null} </h4> </div>)}
-            description={info.aboutme}
-          />
+          <div className="userProfile-container">
+            <Meta
+              title={
+                (<div className="userProfile-info">
+                  <h1>
+                    {info.name}
+                  </h1>
+                  <h4>
+                    {info.DOB ? moment(info.DOB.toDate()).format('MMMM Do YYYY') : null}
+                  </h4>
+                </div>)
+              }
+              description={info.aboutme}
+            />
+          </div>
         </Card>
       </div>
     )

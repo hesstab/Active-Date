@@ -71,7 +71,7 @@ class PostActivity extends Component {
   render () {
     return (
       <div>
-        <form onSubmit={ this._handleSubmit } style={{ display:'flex', flexDirection: 'column', maxWidth: '800px' }}>
+        <form onSubmit={ this._handleSubmit } style={{ display:'flex', flexDirection: 'column', maxWidth: '900px', margin:'0 auto' }}>
           <span>Title:</span>
           <Input
             type="text"
@@ -99,21 +99,21 @@ class PostActivity extends Component {
           <Input
             type="number"
             placeholder="Street number"
-            style={{ width: '30%' }}
+            style={{ width: '40%' }}
             onChange={ this.renderStreetNumber }
             required
           />
           <Input
             type="text"
             placeholder="Street name"
-            style={{ width: '30%', marginTop: '20px' }}
+            style={{ width: '40%', marginTop: '20px' }}
             onChange={ this.renderStreetName }
             required
           />
           <Input
             type="text"
             placeholder="SUBURB"
-            style={{ width: '30%', marginTop: '20px' }}
+            style={{ width: '40%', marginTop: '20px' }}
             onChange={ this.renderSuburb }
             required
           />

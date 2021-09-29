@@ -5,8 +5,12 @@ import { getCurrentUser } from '../helpers/auth';
 
 import { Card } from 'antd';
 import './ActivityCard.css';
-import EditActivity from './EditActivity';
-import DeleteActivity from './DeleteActivity';
+import { fsDb } from "../../services/firebase"
+import moment from 'moment';
+import { getCurrentUser } from '../../helpers/auth';
+import { Card} from 'antd';
+import EditActivity from '../EditActivity';
+import DeleteActivity from '../DeleteActivity';
 
 
 class ActivityCard extends Component {
@@ -71,17 +75,20 @@ class ActivityCard extends Component {
                 </p>
                 <p>{moment(activity?.time?.toDate()).format('MMMM Do YYYY, h:mm:ss a')}</p>
               </Card>
-              <div style={{ marginTop: '10px' }}>
-                <EditActivity
-                  documentId={activity.docId}
-                  documentInfo={activity}
-                  updateActivity={this.updateActivity}
-                />
-
-                <DeleteActivity
-                  deleteAtivity={this.deleteActivity}
-                  documentId={activity.docId}
-                />
+              <div className="activity-edit-delete">
+                <div className="activity-edit">
+                  <EditActivity 
+                    documentId={activity.docId}
+                    documentInfo={activity}
+                    updateActivity={this.updateActivity}
+                  />
+                </div>
+                <div activity-delete>
+                  <DeleteActivity
+                    deleteAtivity={this.deleteActivity}
+                    documentId={activity.docId}
+                  />
+                </div>
               </div>
             </div>
           );
