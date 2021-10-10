@@ -4,7 +4,7 @@ import moment from 'moment';
 import { getCurrentUser } from '../../helpers/auth';
 
 import { Card } from 'antd';
-import './ActivityCard.css';
+import styles from './ActivityCard.module.css';
 import EditActivity from '../EditActivity';
 import DeleteActivity from '../DeleteActivity';
 
@@ -57,7 +57,7 @@ class ActivityCard extends Component {
       if (this.props.userId === getCurrentUser().uid) {
         return activities.map((activity, index) => {
           return (
-            <div key={index} className="site-card-border-less-wrapper">
+            <div key={index} className={styles.cardWrapper}>
               <Card
                 title={activity.title}
                 bordered={false}>
@@ -71,8 +71,8 @@ class ActivityCard extends Component {
                 </p>
                 <p>{moment(activity?.time?.toDate()).format('MMMM Do YYYY, h:mm:ss a')}</p>
               </Card>
-              <div className="activity-edit-delete">
-                <div className="activity-edit">
+              <div className={styles.activityEditDelete}>
+                <div className={styles.activityEdit}>
                   <EditActivity 
                     documentId={activity.docId}
                     documentInfo={activity}
@@ -92,7 +92,7 @@ class ActivityCard extends Component {
       } else {
         return activities.map((activity, index) => {
           return (
-            <div key={index} className="site-card-border-less-wrapper">
+            <div key={index} className={styles.cardWrapper}>
               <Card
                 title={activity.title}
                 bordered={false}>

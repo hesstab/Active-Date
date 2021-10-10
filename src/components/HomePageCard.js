@@ -45,8 +45,9 @@ class HomePageCard extends React.Component {
           }
         }}
       >
-        <Card 
+        <Card
           hoverable
+          className= 'homepage-card'
           title= {
             this.state.user.name +
             ' | ' +

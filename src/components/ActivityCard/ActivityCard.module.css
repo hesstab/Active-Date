@@ -1,0 +1,26 @@
+.cardWrapper {
+  padding: 30px;
+  background: #ececec;
+}
+
+.activityEditDelete {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+.activityEdit {
+  margin-right: 10px;
+}
+
+@media (max-width: 640px) {
+  .cardWrapper {
+    padding: 20px;
+  }
+  
+}
+
+
+
+
+

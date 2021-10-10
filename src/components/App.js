@@ -6,7 +6,7 @@ import {
 import Home from '../pages/Home';
 import Chat from '../pages/Chat';
 import Profile from '../pages/Profile/Profile';
-import PublicProfile from '../pages/PublicProfile';
+import PublicProfile from '../pages/PublicProfile/PublicProfile';
 import PostActivity from '../pages/PostActivity';
 import PrivateChat from '../pages/PrivateChat';
 import Signup from '../pages/Signup';

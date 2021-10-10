@@ -1,30 +1,38 @@
-
-
-.userProfile-img {
-  max-width: 600px;
-  max-height: 600px;
+.privateProfilePageCard > .ant-card-cover {
+  max-width: 825px;
+  height: 550px;
   margin: 0 auto;
 }
 
-.userProfile-container{
+.userProfileImg {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.userInfoContainer{
   padding: 10px;
 }
 
-.userProfile-info h1 {
+.userProfileInfo h1 {
   font-weight: 700;
   font-size: 2rem;
 }
 
-.userProfile-info h4 {
+.userProfileInfo h4 {
   font-size: 1rem;
 }
 
 
 @media (max-width: 640px) {
 
-  .ant-card-body {
-  padding: 15px;
+  .privateProfilePageCard > .ant-card-body {
+    padding: 15px;
   }
+
+  .privateProfilePageCard > .ant-card-cover {
+    margin: 0 auto;
+}
 
 }
 
