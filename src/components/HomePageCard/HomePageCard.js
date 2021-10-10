@@ -45,14 +45,14 @@ class HomePageCard extends Component {
           }
         }}
       >
-        <Card 
+        <Card
           hoverable
+          className= 'homepage-card'
           title= {
             this.state.user.name +
             ' | ' +
             moment(this.state.user?.DOB?.toDate()).toNow('Y')
           }
-          className="homepage-card"
           cover= {
             <img className='card-image' alt="example" src={this.state.user?.userImage || "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"}/>
           }

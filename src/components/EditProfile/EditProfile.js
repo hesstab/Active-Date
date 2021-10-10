@@ -167,27 +167,26 @@ class UserInfo extends Component {
   render(){
     const info = this.props.info;
     return(
-      <div className="userProfile">
-        <Card 
-          cover={<img className="userProfile-img" alt="userpic" src={this.props.imgURL || "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"} />}
+        <Card
+        className="privateProfilePageCard" 
+        cover={<img alt="userpic" className='userProfileImg 'src={this.props.imgURL || "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"}/>}
         >
-          <div className="userProfile-container">
+          <div className="userInfoContainer">
             <Meta
-              title={
-                (<div className="userProfile-info">
+            title={(
+                <div className="userProfileInfo">
                   <h1>
                     {info.name}
                   </h1>
                   <h4>
                     {info.DOB ? moment(info.DOB.toDate()).format('MMMM Do YYYY') : null}
                   </h4>
-                </div>)
-              }
+                </div>
+            )}
               description={info.aboutme}
             />
           </div>
         </Card>
-      </div>
     )
   }
 }

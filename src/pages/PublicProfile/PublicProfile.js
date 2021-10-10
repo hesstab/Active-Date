@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import {Link} from "react-router-dom";
-import { fsDb } from "../services/firebase";
-import { getCurrentUser } from '../helpers/auth';
-import ActivityCard from '../components/ActivityCard/ActivityCard';
-
+import { fsDb } from "../../services/firebase";
+import { getCurrentUser } from '../../helpers/auth';
+import ActivityCard from '../../components/ActivityCard/ActivityCard';
+import './PublicProfile.css';
 import { Button } from 'antd';
 import moment from 'moment';
 import { Card  } from 'antd';
@@ -27,13 +27,11 @@ class PublicProfile extends Component {
         let chats = [];
         snapshots.forEach((snap) => {
           chats.push(snap.data());
-          // console.log(">>>>>>", chats);
         })
 
         const publicUserChat = chats.filter((chat) => {
           return chat.participants.includes(this.props.location.state?.userId)
         })
-        console.log("this >>>>", publicUserChat);
       })
 
   }
@@ -43,14 +41,19 @@ class PublicProfile extends Component {
       return(
         <div>
           <Card
-            cover={<img alt="userpic" src={state.userImage || "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"} />}
+            className="public-profile-page-card"
+            cover={<img alt="userpic" className='public-profile-img'  src={state.userImage || "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"} />}
           >
             <Meta
               title= {(
-                <div style={{ display: 'flex', alignItems: 'center' }}>
-                  <div style={{ flex: 1 }}>
-                    <h1> <strong> {state?.name} </strong> </h1>
-                    <h4> {(state.DOB && state.DOB.toDate) ? moment(state.DOB.toDate()).format('MMMM Do YYYY') : null} </h4>
+                <div className="public-profile-info">
+                  <div clssName="profile-info">
+                    <h1> 
+                      {state?.name} 
+                    </h1>
+                    <h4> 
+                      {(state.DOB && state.DOB.toDate) ? moment(state.DOB.toDate()).format('MMMM Do YYYY') : null} 
+                    </h4>
                   </div>
                   <div>
                     <Link to={{ pathname: '/PrivateChat', state: { chatId: '1' } }}>
@@ -69,7 +72,7 @@ class PublicProfile extends Component {
   render () {
     this.fetchChats();
     return (
-      <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+      <div style={{ maxWidth: '900px', margin: '0 auto' }}>
         {this.renderProfileInfo()}
         <ActivityCard userId={ this.props.location.state?.userId }/>
       </div>

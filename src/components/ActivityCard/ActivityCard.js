@@ -4,7 +4,7 @@ import moment from 'moment';
 import { getCurrentUser } from '../../helpers/auth';
 
 import { Card } from 'antd';
-import styles from './ActivityCard.module.css';
+import './ActivityCard.css';
 import EditActivity from '../EditActivity';
 import DeleteActivity from '../DeleteActivity';
 
@@ -56,8 +56,10 @@ class ActivityCard extends Component {
       if (this.props.userId === getCurrentUser().uid) {
         return activities.map((activity, index) => {
           return (
-            <div key={index} className={styles.cardContainer}>
-              <Card title={activity.title} bordered={false}>
+            <div key={index} className="card-wrapper">
+              <Card
+                title={activity.title}
+                bordered={false}>
                 <p>{activity.description}</p>
                 <p>
                   {activity.location.street_number +
@@ -72,15 +74,15 @@ class ActivityCard extends Component {
                   )}
                 </p>
               </Card>
-              <div className={styles.activityEditDelete}>
+              <div className="activity-edit-delete">
                 <div className="activity-edit">
-                  <EditActivity
+                  <EditActivity 
                     documentId={activity.docId}
                     documentInfo={activity}
                     updateActivity={this.updateActivity}
                   />
                 </div>
-                <div activity-delete>
+                <div className="activity-delete">
                   <DeleteActivity
                     deleteAtivity={this.deleteActivity}
                     documentId={activity.docId}
@@ -93,19 +95,21 @@ class ActivityCard extends Component {
       } else {
         return activities.map((activity, index) => {
           return (
-            <div key={index} className={styles.cardContainer}>
-              <Card
-                title={activity.title}
-                bordered={false}>
+            <div key={index} className="card-wrapper">
+              <Card title={activity.title} bordered={false}>
                 <p>{activity.description}</p>
                 <p>
-                  {
-                  activity.location.street_number + ', '
-                  + activity.location.street + ', '
-                  + activity.location.suburb
-                  }
+                  {activity.location.street_number +
+                    ", " +
+                    activity.location.street +
+                    ", " +
+                    activity.location.suburb}
                 </p>
-                <p>{moment(activity?.time?.toDate()).format('MMMM Do YYYY, h:mm:ss a')}</p>
+                <p>
+                  {moment(activity?.time?.toDate()).format(
+                    "MMMM Do YYYY, h:mm:ss a"
+                  )}
+                </p>
               </Card>
             </div>
           );

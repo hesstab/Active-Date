@@ -1,0 +1,53 @@
+.public-profile-page-card > .ant-card-cover {
+  width: 850px;
+  height: 550px;
+  margin: 0 auto;
+}
+
+.public-profile-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.user-info-container{
+  padding: 10px;
+}
+
+.Public-profile-info {
+  display: flex;
+  align-items: center;
+}
+
+.profile-info {
+  flex: 1;
+}
+
+.profile-info h1 {
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.profile-info h4 {
+  font-size: 1rem;
+}
+
+@media (max-width: 640px) {
+  
+  .public-profile-page-card > .ant-card-cover {
+    margin: 0 auto;
+    max-width: 320px;
+    height: 250px;
+  }
+
+  .public-profile-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .ant-card-body {
+    padding: 15px;
+  }
+
+}

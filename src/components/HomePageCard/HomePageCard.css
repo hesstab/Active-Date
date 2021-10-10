@@ -18,9 +18,8 @@
     height: 300px;
 }
 
-
 @media only screen and (max-width: 640px) {
-    .ant-card-cover {
+    .homepage-card > .ant-card-cover {
         max-width: 320px;
         max-height: 250px;
     }
