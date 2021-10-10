@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { fsDb } from "../services/firebase"
+import { fsDb } from "../../services/firebase";
 import { Button } from 'antd';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';

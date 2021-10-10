@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { fsDb } from "../services/firebase"
-import SearchBar from '../components/SearchBar';
-import CardsContainer from '../components/CardsContainer';
+import SearchBar from '../components/SearchBar/SearchBar';
+import CardsContainer from '../components/CardsContainer/CardsContainer';
 
 class Home extends Component {
   constructor() {

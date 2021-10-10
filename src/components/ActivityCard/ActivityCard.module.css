@@ -1,9 +1,9 @@
-.site-card-border-less-wrapper {
+.cardCntainer {
   padding: 30px;
   background: #ececec;
 }
 
-.activity-edit-delete {
+.activityEditDelete {
   margin-top: 10px;
 }
 

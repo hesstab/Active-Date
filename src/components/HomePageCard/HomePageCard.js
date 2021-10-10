@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
-import { fsDb } from "../services/firebase"
+import { fsDb } from "../../services/firebase";
 import { Card } from 'antd';
 import moment from 'moment';
 import './HomePageCard.css';
 
 const { Meta } = Card;
 
-class HomePageCard extends React.Component {
+class HomePageCard extends Component {
 
   state = {
     user: ''
@@ -52,7 +52,11 @@ class HomePageCard extends React.Component {
             ' | ' +
             moment(this.state.user?.DOB?.toDate()).toNow('Y')
           }
-          cover={<img className='card-image' alt="example" src={this.state.user?.userImage || "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"}/>} >
+          className="homepage-card"
+          cover= {
+            <img className='card-image' alt="example" src={this.state.user?.userImage || "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"}/>
+          }
+        >
           <Meta title={activity.title} description="" /> <br/>
             <h5>
               {

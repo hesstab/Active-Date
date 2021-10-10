@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import HomePageCard from './HomePageCard';
+import HomePageCard from '../HomePageCard/HomePageCard';
 import './CardsContainer.css';
 
 class CardsContainer extends Component {
